@@ -1,0 +1,133 @@
+body {
+  font-family:-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Ubuntu,Fira Sans,Roboto,Avenir Next,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: xx-large;
+  background-color: #000;
+  color: #fff;
+}
+
+header {
+  background-color: #000;
+  padding: 20px;
+  text-align: center;
+  margin: 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+
+.logo {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  margin-left: 20px;
+}
+
+nav a:hover {
+  color: #0099cc;
+}
+
+#top-section {
+  width: 100%;
+  text-align: center;
+  padding-top: 100px;
+  color: white;
+  overflow: hidden;
+  background: #C04848;  /* fallback for old browsers */
+  background: linear-gradient(rgb(72,0,72,0.8), rgb(192,72,72,0.8)), url("https://ik.imagekit.io/ikmedia/blog/hero-image.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.c64-black {
+  color: rgb(0, 0, 0);
+}
+
+.c64-white {
+  color: rgb(255, 255, 255);
+}
+
+.c64-red {
+  color: rgb(136, 0, 0);
+}
+
+.c64-cyan {
+  color: rgb(170, 255, 238);
+}
+
+.c64-purple {
+  color: rgb(204, 68, 204);
+}
+
+.c64-green {
+  color: rgb(0, 204, 85);
+}
+
+.c64-blue {
+  color: rgb(0, 0, 170);
+}
+
+.c64-yellow {
+  color: rgb(238, 238, 119);
+}
+
+.c64-orange {
+  color: rgb(221, 136, 85);
+}
+
+.c64-brown {
+  color: rgb(102, 68, 0);
+}
+
+.c64-light-red {
+  color: rgb(255, 119, 119);
+}
+
+.c64-dark-gray {
+  color: rgb(51, 51, 51);
+}
+
+.c64-medium-gray {
+  color: rgb(119, 119, 119);
+}
+
+.c64-light-green {
+  color: rgb(170, 255, 102);
+}
+
+.c64-light-blue {
+  color: rgb(0, 136, 255);
+}
+
+.c64-light-gray {
+  color: rgb(187, 187, 187);
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+}
+
+p {
+  color: rgb(0, 136, 255);
+}
+
+.card-img-prod {
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+.card-img-prod.visible {
+  transition: opacity 0.5s ease-in;
+  opacity: 1;
+}

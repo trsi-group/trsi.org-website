@@ -1,0 +1,16 @@
+build a website for the demo scene group Tristar & Red Sector Inc. using bootstrap.
+it should work on mobile, tables and desktop.
+colors are black background, footer dark grey, everything else in pastel colors close to the commodore c64 palette.
+assign proper tag ID to each section we are going to create, so we can modify them afterwards.
+
+we don't need a header.
+at the top, there is a section with 5 columns of text, covered by a large image in the background.
+
+next section are card tiles, 3 columns with 5 rows each. card tiles have a clickable image at top, and a text underneath.
+images are hidden first, and only show up when reaching the viewport (1 sec delay)
+each image has small margins and slightly increases in size when hovering over it.
+as images you can reference any TRSI demo image you can find, and add the correct text to it.
+
+last section is a footer, with 2 columns for links, 3 rows each.
+
+go for it and give me the code.
