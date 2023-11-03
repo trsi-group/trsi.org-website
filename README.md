@@ -15,3 +15,6 @@ API endpoint with our releases on Pouet.net
 
 https://api.pouet.net/v1/group/?id=280
 
+### TRSI Records auf Discogs
+
+https://www.discogs.com/de/search?q=trsi+recordz&type=all
