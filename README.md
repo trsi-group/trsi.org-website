@@ -18,3 +18,8 @@ https://api.pouet.net/v1/group/?id=280
 ### TRSI Records auf Discogs
 
 https://www.discogs.com/de/search?q=trsi+recordz&type=all
+
+### TRSI CSDB
+will return XML
+
+https://csdb.dk/webservice/?type=group&id=915
