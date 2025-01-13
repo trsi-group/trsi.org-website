@@ -1,0 +1,14 @@
+{
+  "name": "trsi.org-website",
+  "version": "1.0.0",
+  "description": "TRSI Website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TRSI",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}

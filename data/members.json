@@ -1,0 +1,18 @@
+{
+  "members": [
+    {
+      "handle": "Madison",
+      "avatar": "Lasereyes.png",
+      "real_name": "Oliver",
+      "member_since": "1991-11-11T00:00:00",
+      "member_status": "active"
+    },
+    {
+      "handle": "Coolcat",
+      "avatar": "coolcat2.png",
+      "real_name": "Marcel",
+      "member_since": null,
+      "member_status": "active"
+    }
+  ]
+}

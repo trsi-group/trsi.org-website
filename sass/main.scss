@@ -1,0 +1,11 @@
+$navbar-dark-color:                 rgba(#70b0ff, .95);
+$navbar-dark-hover-color:           rgba(#ff0000, .75);
+$navbar-dark-active-color:          #ff0000;
+$navbar-dark-disabled-color:        rgba(#ff0000, .25);
+$navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-dark-toggler-border-color:  rgba(#ff0000, .1);
+
+$navbar-dark-brand-color:                 $navbar-dark-active-color;
+$navbar-dark-brand-hover-color:           $navbar-dark-active-color;
+// import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap'

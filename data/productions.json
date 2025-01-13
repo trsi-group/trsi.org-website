@@ -1,0 +1,28 @@
+{
+  "productions": [
+    {
+      "title": "Belgium Easter Party 92 Invitation",
+      "type": "Demo",
+      "description": "Belgium Easter Party 92 Invitation",
+      "release_date": "1992-03-12",
+      "image": "belgium_easter_party_92_invitation.png",
+      "platform": "Amiga OCS",
+      "youtube_url": "https://www.youtube.com/watch?v=e9AUuEjd2os",
+      "pouet_url": "https://www.pouet.net/prod.php?which=14488",
+      "demozoo_url": "https://demozoo.org/productions/263568/",
+      "credits": ["Madison", "Double Trouble", "TMB", "Adec"]
+    },
+    {
+      "title": "Another Demo Example",
+      "type": "Demo",
+      "description": "This is a placeholder for another demo entry.",
+      "release_date": "1993-04-15",
+      "image": "raindown_wilddemo.jpeg",
+      "platform": "Commodore 64",
+      "youtube_url": "https://youtube.com/example-demo",
+      "pouet_url": "https://pouet.net/example-demo",
+      "demozoo_url": "https://demozoo.org/productions/123456/",
+      "credits": ["John Doe", "Jane Smith"]
+    }
+  ]
+}
