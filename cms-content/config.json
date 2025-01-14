@@ -1,8 +1,8 @@
 {
     "spaceId": "l8kv2ckiiqjb",
     "environmentId": "master",
-    "managementToken": "CFPAT-X1CEnPLL2zS-PYwfbLWoKl7DO2rIzYlj2oRtXSelqTs",
-    "deliveryToken": "rLAyG9sbtB2znx8AM8mONFcx3x4hZHc_1z_WpS3JU28",
+    "managementToken": "",
+    "deliveryToken": "",
     "exportDir": ".",
     "saveFile": true,
     "contentFile": "export.json",
