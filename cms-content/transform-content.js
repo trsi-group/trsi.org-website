@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Define the directory where images are stored in the exported Contentful assets
-const ASSET_SOURCE_DIR = path.resolve(__dirname, '../cms-content/images.ctfassets.net');
+const ASSET_SOURCE_DIR = 'images.ctfassets.net';
 // Define the directory where images should be copied to
 const IMAGE_DIR = '';
 
@@ -57,7 +57,7 @@ function transformContentful(contentfulData) {
  * Copies image assets from the Contentful export to the local image directory.
  * @param {Object} contentfulData - The raw JSON data exported from Contentful.
  */
-function copyAssetsToLocal(contentfulData, exportDir) {
+function copyAssetsToLocal(contentfulData, exportDir, assetDir) {
   const { assets } = contentfulData;
 
   // Ensure the target directory exists
@@ -90,7 +90,7 @@ function copyAssetsToLocal(contentfulData, exportDir) {
   assets.forEach((asset) => {
     if (asset.fields.file && asset.fields.file['en-US']) {
       const fileName = asset.fields.file['en-US'].fileName;
-      const sourcePath = findFileRecursively(ASSET_SOURCE_DIR, fileName); // Find file recursively
+      const sourcePath = findFileRecursively(assetDir, fileName); // Find file recursively
       const targetPath = path.join(exportDir, fileName); // Path in target folder
 
       if (sourcePath) {
@@ -101,7 +101,7 @@ function copyAssetsToLocal(contentfulData, exportDir) {
           console.warn(`Failed to copy ${fileName} from ${sourcePath}:`, err.message);
         }
       } else {
-        console.warn(`File ${fileName} not found in ${ASSET_SOURCE_DIR}`);
+        console.warn(`File ${fileName} not found in ${assetDir}`);
       }
     }
   });
@@ -116,14 +116,15 @@ if (require.main === module) {
   }
 
   const [inputFile, outputPath] = args;
-  const outputFile = outputPath + 'export.json';
+  const outputFile = outputPath + 'content.json';
 
   try {
     const inputData = JSON.parse(fs.readFileSync(inputFile, 'utf8'));
-    const imageOutputPath = outputPath + 'images';
+    const imageOutputPath = outputPath + 'images/';
+    const assetPath = outputPath + ASSET_SOURCE_DIR;
 
     // Copy assets to local image directory
-    copyAssetsToLocal(inputData, imageOutputPath);
+    copyAssetsToLocal(inputData, imageOutputPath, assetPath);
 
     // Transform content and write output file
     const transformedData = transformContentful(inputData);

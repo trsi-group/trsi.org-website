@@ -48,6 +48,35 @@
       "pouet_url": "https://www.pouet.net/prod.php?which=3119",
       "demozoo_url": "https://demozoo.org/productions/10297/",
       "credits": []
+    },
+    {
+      "title": "Spooky Scroller",
+      "type": "Intro",
+      "description": {
+        "data": {},
+        "content": [
+          {
+            "data": {},
+            "content": [
+              {
+                "data": {},
+                "marks": [],
+                "value": "spooky intro and first release by Astaroth since forever",
+                "nodeType": "text"
+              }
+            ],
+            "nodeType": "paragraph"
+          }
+        ],
+        "nodeType": "document"
+      },
+      "release_date": "2024-10-31",
+      "image": "spooky_scroller.png",
+      "platform": "C64",
+      "youtube_url": "https://www.youtube.com/watch?v=356y8OXD6ns",
+      "pouet_url": "https://www.pouet.net/prod.php?which=100002",
+      "demozoo_url": "https://demozoo.org/productions/360453/",
+      "credits": []
     }
   ]
 }
