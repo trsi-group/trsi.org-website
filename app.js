@@ -18,6 +18,7 @@
 //     request.send();
 //   })
 // }
+const imagePath = 'images/productions/';
 
 const getData = async (resource) => {
   const response = await fetch(resource);
@@ -39,7 +40,7 @@ getData('data/productions.json')
     html += `<div class="col">
       <div class="card h-100">
         <div>
-          <img class="card-img-prod img-fluid" src="images/productions/${data.productions[i].image}" alt="...">
+          <img class="card-img-prod img-fluid" src="${imagePath + data.productions[i].image}" alt="...">
         </div>
         <div class="card-body">
           <p class="card-text c64-purple">${data.productions[i].title} (${year})</p>
@@ -66,7 +67,7 @@ getData('data/members.json')
           <img class="card-img-prod img-fluid" src="images/members/${data.members[i].image}" alt="...">
         </div>
         <div class="card-body">
-          <p class="card-text c64-purple">${data.members[i].title} (${year})</p>
+          <p class="card-text c64-purple">${data.members[i].title}</p>
         </div>
       </div>
     </div>`;
