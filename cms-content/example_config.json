@@ -1,0 +1,25 @@
+{
+  "spaceId": "l8kv2ckiiqjb",
+  "environmentId": "master",
+  "managementToken": "",
+  "deliveryToken": "",
+  "exportDir": ".",
+  "saveFile": true,
+  "contentFile": "export.json",
+  "includeDrafts": false,
+  "includeArchived": false,
+  "skipContentModel": false,
+  "skipContent": false,
+  "skipRoles": false,
+  "skipWebhooks": false,
+  "contentOnly": true,
+  "queryEntries": [
+    "content_type=productions"
+  ],
+  "queryAssets": [],
+  "downloadAssets": true,
+  "host": "api.contentful.com",
+  "maxAllowedLimit": 1000,
+  "errorLogFile": "./error.log",
+  "useVerboseRenderer": false
+}

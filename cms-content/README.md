@@ -2,11 +2,15 @@
 
 This script exports all content and assets from Contentful, and transforms the content for consumption by app.js to build the site. Currenty it only support data for our productions.
 
+1. copy ```example_config.json``` to ```config.json``` and add the Contentful API secrets.
+
+2. execute script from /cms-content dir.
+
 ```
 node ./transform-content.js productions.json ./export/
 ```
 
-Copy transformed export data and image assets.
+3. Copy transformed export data and image assets.
 
 ```
 cp export/productions.json ../data/ \
