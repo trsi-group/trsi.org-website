@@ -1,0 +1,25 @@
+{
+    "spaceId": "l8kv2ckiiqjb",
+    "environmentId": "master",
+    "managementToken": "CFPAT-X1CEnPLL2zS-PYwfbLWoKl7DO2rIzYlj2oRtXSelqTs",
+    "deliveryToken": "rLAyG9sbtB2znx8AM8mONFcx3x4hZHc_1z_WpS3JU28",
+    "exportDir": ".",
+    "saveFile": true,
+    "contentFile": "export.json",
+    "includeDrafts": false,
+    "includeArchived": false,
+    "skipContentModel": false,
+    "skipContent": false,
+    "skipRoles": false,
+    "skipWebhooks": false,
+    "contentOnly": true,
+    "queryEntries": [
+      "content_type=productions"
+    ],
+    "queryAssets": [],
+    "downloadAssets": true,
+    "host": "api.contentful.com",
+    "maxAllowedLimit": 1000,
+    "errorLogFile": "./error.log",
+    "useVerboseRenderer": false
+  }
