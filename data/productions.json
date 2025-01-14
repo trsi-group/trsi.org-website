@@ -77,6 +77,18 @@
       "pouet_url": "https://www.pouet.net/prod.php?which=100002",
       "demozoo_url": "https://demozoo.org/productions/360453/",
       "credits": []
+    },
+    {
+      "title": "Fallen Heroes",
+      "type": "Demo",
+      "description": "",
+      "release_date": "2024-10-05",
+      "image": "eec5.350929.png",
+      "platform": "C64",
+      "youtube_url": "https://www.youtube.com/watch?v=uGAWhdwaKks",
+      "pouet_url": null,
+      "demozoo_url": "https://demozoo.org/productions/358695/",
+      "credits": []
     }
   ]
 }
