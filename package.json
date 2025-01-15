@@ -5,7 +5,10 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node ./scripts/build_content.js"
+    "fetch-content": "node scripts/fetchContent.js",
+    "transform-content": "node scripts/transformContent.js",
+    "copy-content": "node scripts/copyContent.js",
+    "build": "npm run fetch-content && npm run transform-content && npm run copy-content"
   },
   "author": "TRSI",
   "license": "ISC",

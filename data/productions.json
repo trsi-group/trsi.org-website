@@ -89,6 +89,59 @@
       "pouet_url": null,
       "demozoo_url": "https://demozoo.org/productions/358695/",
       "credits": []
+    },
+    {
+      "title": "Automated Raster Machine",
+      "type": "Intro",
+      "description": "",
+      "release_date": "2024-03-30",
+      "image": "787c.342015.png",
+      "platform": "Amiga OCS",
+      "youtube_url": "https://www.youtube.com/watch?v=TKRPNuRWnvU",
+      "pouet_url": "https://www.pouet.net/prod.php?which=96545",
+      "demozoo_url": "https://demozoo.org/productions/342179/",
+      "credits": []
+    },
+    {
+      "title": "Ich mach mir die Welt, wie sie mir gefällt!",
+      "type": "Graphic",
+      "description": {
+        "nodeType": "document",
+        "data": {},
+        "content": [
+          {
+            "nodeType": "paragraph",
+            "data": {},
+            "content": [
+              {
+                "nodeType": "text",
+                "value": "1st place at Revision 2020 in ASCII ANSI PETSCII",
+                "marks": [],
+                "data": {}
+              }
+            ]
+          },
+          {
+            "nodeType": "paragraph",
+            "data": {},
+            "content": [
+              {
+                "nodeType": "text",
+                "value": "",
+                "marks": [],
+                "data": {}
+              }
+            ]
+          }
+        ]
+      },
+      "release_date": "2020-04-10",
+      "image": "01-Revision 2020 - Elko_TRSi - Ich mach mir die Welt, wie sie mir gefaellt.png",
+      "platform": "Custom",
+      "youtube_url": null,
+      "pouet_url": null,
+      "demozoo_url": "https://demozoo.org/graphics/276964/",
+      "credits": []
     }
   ]
 }
