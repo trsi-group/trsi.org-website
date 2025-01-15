@@ -2,9 +2,14 @@ const fs = require('fs');
 const path = require('path');
 
 // Define the directory where images are stored in the exported Contentful assets
-const ASSET_SOURCE_DIR = 'images.ctfassets.net';
+const ASSET_SOURCE_DIR = '/images.ctfassets.net';
 // Define the directory where images should be copied to
 const IMAGE_DIR = '';
+
+// Resolve paths dynamically
+// Assumes that '/scripts' is base path
+const contentJsonSource = path.resolve(__dirname, '../cms-content/export/export.json');
+const contentJsonDestination = path.resolve(__dirname, '../cms-content/export');
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -109,20 +114,21 @@ function copyAssetsToLocal(contentfulData, exportDir, assetDir) {
 
 // CLI Execution
 if (require.main === module) {
-  const args = process.argv.slice(2);
-  if (args.length < 2) {
-    console.error('Usage: node transformContentful.js <inputFile> <outputPath>');
-    process.exit(1);
-  }
+  // const args = process.argv.slice(2);
+  // if (args.length < 2) {
+  //   console.error('Usage: node transformContentful.js <inputFile> <outputPath>');
+  //   process.exit(1);
+  // }
 
-  const [inputFile, outputPath] = args;
-  const outputFile = outputPath + 'content.json';
+  const inputFile = contentJsonSource;
+  const outputPath = contentJsonDestination;
+  const outputFile = path.resolve(__dirname, '../cms-content/export', 'content.json');
 
   try {
     const inputData = JSON.parse(fs.readFileSync(inputFile, 'utf8'));
-    const imageOutputPath = outputPath + 'images/';
-    const assetPath = outputPath + ASSET_SOURCE_DIR;
-
+    const imageOutputPath = path.resolve(__dirname, outputPath, 'images');
+    const assetPath = path.resolve(__dirname, outputPath + ASSET_SOURCE_DIR);
+    
     // Copy assets to local image directory
     copyAssetsToLocal(inputData, imageOutputPath, assetPath);
 
