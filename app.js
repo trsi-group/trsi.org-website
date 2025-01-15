@@ -18,8 +18,6 @@
 //     request.send();
 //   })
 // }
-const imagePath = 'images/productions/';
-
 const getData = async (resource) => {
   const response = await fetch(resource);
   if (response.status !== 200) {
@@ -29,7 +27,7 @@ const getData = async (resource) => {
   return data;
 }
 
-getData('data/productions.json')
+getData('/cms/data/productions.json')
 .then(data => {
   const productionsRoot = document.getElementById('productions-container');
   let html = '';
@@ -40,7 +38,7 @@ getData('data/productions.json')
     html += `<div class="col">
       <div class="card h-100">
         <div>
-          <img class="card-img-prod img-fluid" src="${imagePath + data.productions[i].image}" alt="...">
+          <img class="card-img-prod img-fluid" src="${data.productions[i].image}" alt="...">
         </div>
         <div class="card-body">
           <p class="card-text c64-purple">${data.productions[i].title} (${year})</p>
@@ -64,7 +62,7 @@ getData('data/members.json')
     html += `<div class="col">
       <div class="card h-100">
         <div>
-          <img class="card-img-prod img-fluid" src="images/members/${data.members[i].image}" alt="...">
+          <img class="card-img-prod img-fluid" src="${data.productions[i].image}" alt="...">
         </div>
         <div class="card-body">
           <p class="card-text c64-purple">${data.members[i].title}</p>

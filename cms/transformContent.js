@@ -8,8 +8,10 @@ const IMAGE_DIR = '';
 
 // Resolve paths dynamically
 // Assumes that '/scripts' is base path
-const contentJsonSource = path.resolve(__dirname, '../cms-content/export/export.json');
-const contentJsonDestination = path.resolve(__dirname, '../cms-content/export');
+const contentJsonSource = path.resolve(__dirname, 'export/export.json');
+const contentImageSource = path.resolve(__dirname, 'export/images.ctfassets.net');
+const contentJsonDestination = path.resolve(__dirname, 'data/productions.json');
+const contentImageDestination = path.resolve(__dirname, 'images');
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -46,7 +48,7 @@ function transformContentful(contentfulData) {
         type: fields.type['en-US'],
         description: fields.description ? fields.description['en-US'] : '',
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : '',
-        image: imageId ? findAssetPathById(imageId) : null,
+        image: imageId ? path.resolve('/cms/images/', findAssetPathById(imageId)) : null,
         platform: fields.platform ? fields.platform['en-US'] : '',
         youtube_url: fields.youTubeUrl ? fields.youTubeUrl['en-US'] : null,
         pouet_url: fields.pouetUrl ? fields.pouetUrl['en-US'] : null,
@@ -120,22 +122,21 @@ if (require.main === module) {
   //   process.exit(1);
   // }
 
-  const inputFile = contentJsonSource;
-  const outputPath = contentJsonDestination;
-  const outputFile = path.resolve(__dirname, '../cms-content/export', 'content.json');
-
   try {
-    const inputData = JSON.parse(fs.readFileSync(inputFile, 'utf8'));
-    const imageOutputPath = path.resolve(__dirname, outputPath, 'images');
-    const assetPath = path.resolve(__dirname, outputPath + ASSET_SOURCE_DIR);
+    const contentJsonData = JSON.parse(fs.readFileSync(contentJsonSource, 'utf8'));
     
     // Copy assets to local image directory
-    copyAssetsToLocal(inputData, imageOutputPath, assetPath);
+    copyAssetsToLocal(contentJsonData, contentImageDestination, contentImageSource);
+    console.log(`Image assets written to ${contentImageDestination}`);
+
+    // Ensure the /data directory exists
+    const dataDir = path.dirname(contentJsonDestination);
+    fs.mkdirSync(dataDir, { recursive: true });
 
     // Transform content and write output file
-    const transformedData = transformContentful(inputData);
-    fs.writeFileSync(outputFile, JSON.stringify(transformedData, null, 2));
-    console.log(`Transformed data written to ${outputFile}`);
+    const transformedData = transformContentful(contentJsonData);
+    fs.writeFileSync(contentJsonDestination, JSON.stringify(transformedData, null, 2));
+    console.log(`Transformed data written to ${contentJsonDestination}`);
   } catch (error) {
     console.error('Error processing data:', error);
     process.exit(1);
