@@ -62,7 +62,7 @@ getData('data/members.json')
     html += `<div class="col">
       <div class="card h-100">
         <div>
-          <img class="card-img-prod img-fluid" src="${data.productions[i].image}" alt="...">
+          <img class="card-img-prod img-fluid" src="${data.members[i].avatar}" alt="...">
         </div>
         <div class="card-body">
           <p class="card-text c64-purple">${data.members[i].title}</p>
