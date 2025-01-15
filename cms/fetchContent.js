@@ -4,8 +4,8 @@ const { exec } = require('child_process');
 const path = require('path');
 
 // Assumes that '/scripts' is base path
-const configPath = path.resolve(__dirname, '../cms-content/config.json');
-const exportDir = path.resolve(__dirname, '../cms-content/export');
+const configPath = path.resolve(__dirname, 'config.json');
+const exportDir = path.resolve(__dirname, 'export');
 
 // Load tokens from environment variables
 const DELIVERY_TOKEN = process.env.DELIVERY_TOKEN;
