@@ -5,7 +5,7 @@
   "deliveryToken": "",
   "exportDir": ".",
   "saveFile": true,
-  "contentFile": "export.json",
+  "contentFile": "content.json",
   "includeDrafts": false,
   "includeArchived": false,
   "skipContentModel": false,

@@ -8,7 +8,7 @@ const IMAGE_DIR = '';
 
 // Resolve paths dynamically
 // Assumes that '/scripts' is base path
-const contentJsonSource = path.resolve(__dirname, 'export/export.json');
+const contentJsonSource = path.resolve(__dirname, 'export/content.json');
 const contentImageSource = path.resolve(__dirname, 'export/images.ctfassets.net');
 const contentJsonDestination = path.resolve(__dirname, 'data/productions.json');
 const contentImageDestination = path.resolve(__dirname, 'images');
@@ -38,15 +38,15 @@ function transformContentful(contentfulData) {
       const imageId = fields.image?.['en-US']?.sys.id;
 
       // Extract credits from the new structure
-      const credits = fields.credits?.['en-US']?.credits?.map((credit) => ({
+      const credits = fields.credits?.['en-US']?.map((credit) => ({
         name: credit.name,
-        contribution: credit.credit,
+        contribution: credit.contribution,
       })) || [];
 
       return {
         title: fields.title['en-US'],
         type: fields.type['en-US'],
-        description: fields.description ? fields.description['en-US'] : '',
+        description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : '',
         image: imageId ? path.resolve('/cms/images/', findAssetPathById(imageId)) : null,
         platform: fields.platform ? fields.platform['en-US'] : '',
