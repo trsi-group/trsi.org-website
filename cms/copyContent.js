@@ -3,10 +3,10 @@ const path = require('path');
 
 // Resolve paths dynamically
 // Assumes that '/scripts' is base path
-const contentJsonSource = path.resolve(__dirname, '../cms-content/export/content.json');
-const contentJsonDestination = path.resolve(__dirname, '../data/productions.json');
-const imagesSource = path.resolve(__dirname, '../cms-content/export/images/*');
-const imagesDestination = path.resolve(__dirname, '../images/productions/');
+const contentJsonSource = path.resolve(__dirname, 'export/export.json');
+const contentJsonDestination = path.resolve(__dirname, 'data/productions.json');
+const imagesSource = path.resolve(__dirname, 'export/images.ctfassets.net/*');
+const imagesDestination = path.resolve(__dirname, 'images/');
 
 // Commands with resolved paths
 const commands = [
