@@ -1,3 +1,5 @@
+require('dotenv').config(); // Load environment variables from .env
+
 const { exec } = require('child_process');
 const path = require('path');
 
@@ -5,7 +7,16 @@ const path = require('path');
 const configPath = path.resolve(__dirname, '../cms-content/config.json');
 const exportDir = path.resolve(__dirname, '../cms-content/export');
 
-const command = `contentful space export --config ${configPath} --export-dir ${exportDir}`;
+// Load tokens from environment variables
+const DELIVERY_TOKEN = process.env.DELIVERY_TOKEN;
+const MANAGEMENT_TOKEN = process.env.MANAGEMENT_TOKEN;
+
+if (!DELIVERY_TOKEN || !MANAGEMENT_TOKEN) {
+  console.error('Error: DELIVERY_TOKEN and MANAGEMENT_TOKEN must be set in the .env file.');
+  process.exit(1);
+}
+
+const command = `contentful space export --config ${configPath} --export-dir ${exportDir} --management-token ${MANAGEMENT_TOKEN} --delivery-token ${DELIVERY_TOKEN}`;
 
 exec(command, (error, stdout, stderr) => {
   if (error) {

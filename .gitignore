@@ -1,5 +1,5 @@
+.env
 node_modules
 .DS_Store
 /cms-content/export
-cms-content/config.json
-cms-content/config.json
+
