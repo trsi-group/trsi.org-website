@@ -32,8 +32,8 @@
       "release_date": "1992-03-12",
       "image": "ec84.jw35556.png",
       "platform": "Amiga OCS",
-      "youtube_url": null,
-      "pouet_url": null,
+      "youtube_url": "https://youtu.be/e9AUuEjd2os",
+      "pouet_url": "https://www.pouet.net/prod.php?which=14488",
       "demozoo_url": "https://demozoo.org/productions/263568/",
       "credits": []
     },
@@ -106,41 +106,111 @@
       "title": "Ich mach mir die Welt, wie sie mir gefällt!",
       "type": "Graphic",
       "description": {
-        "nodeType": "document",
         "data": {},
         "content": [
           {
-            "nodeType": "paragraph",
             "data": {},
             "content": [
               {
-                "nodeType": "text",
-                "value": "1st place at Revision 2020 in ASCII ANSI PETSCII",
+                "data": {},
                 "marks": [],
-                "data": {}
+                "value": "1st place at Revision 2020 in ASCII ANSI PETSCII",
+                "nodeType": "text"
               }
-            ]
+            ],
+            "nodeType": "paragraph"
           },
           {
-            "nodeType": "paragraph",
             "data": {},
             "content": [
               {
-                "nodeType": "text",
-                "value": "",
+                "data": {},
                 "marks": [],
-                "data": {}
+                "value": "",
+                "nodeType": "text"
               }
-            ]
+            ],
+            "nodeType": "paragraph"
           }
-        ]
+        ],
+        "nodeType": "document"
       },
       "release_date": "2020-04-10",
-      "image": "01-Revision 2020 - Elko_TRSi - Ich mach mir die Welt, wie sie mir gefaellt.png",
+      "image": "01-Revision_2020_-_Elko_TRSi_-_Ich_mach_mir_die_Welt__wie_sie_mir_gefaellt.png",
       "platform": "Custom",
       "youtube_url": null,
       "pouet_url": null,
       "demozoo_url": "https://demozoo.org/graphics/276964/",
+      "credits": []
+    },
+    {
+      "title": "Wicked Sensation",
+      "type": "Demo",
+      "description": {
+        "data": {},
+        "content": [
+          {
+            "data": {},
+            "content": [
+              {
+                "data": {},
+                "marks": [],
+                "value": "1st place at release party: World of Commodore 1992",
+                "nodeType": "text"
+              }
+            ],
+            "nodeType": "paragraph"
+          }
+        ],
+        "nodeType": "document"
+      },
+      "release_date": "1992-11-01",
+      "image": "00003118.png",
+      "platform": "Amiga OCS",
+      "youtube_url": "https://www.youtube.com/watch?v=uFN5RS4LvNY",
+      "pouet_url": "https://www.pouet.net/prod.php?which=3118",
+      "demozoo_url": null,
+      "credits": []
+    },
+    {
+      "title": "Misery III",
+      "type": "Demo",
+      "description": "",
+      "release_date": "2009-10-01",
+      "image": "00053941.gif",
+      "platform": "C64",
+      "youtube_url": "http://www.youtube.com/watch?v=VjAZtoeU8Zo",
+      "pouet_url": "https://www.pouet.net/prod.php?which=53941",
+      "demozoo_url": "https://demozoo.org/productions/86969/",
+      "credits": []
+    },
+    {
+      "title": "q(n)=2k15",
+      "type": "Demo",
+      "description": {
+        "data": {},
+        "content": [
+          {
+            "data": {},
+            "content": [
+              {
+                "data": {},
+                "marks": [],
+                "value": "1st place 8k demo at Revision 2015",
+                "nodeType": "text"
+              }
+            ],
+            "nodeType": "paragraph"
+          }
+        ],
+        "nodeType": "document"
+      },
+      "release_date": "2015-04-02",
+      "image": "00065425.jpg",
+      "platform": "PC",
+      "youtube_url": "https://www.youtube.com/watch?v=0eNIfjQD4Tc",
+      "pouet_url": "https://www.pouet.net/prod.php?which=65425",
+      "demozoo_url": "http://demozoo.org/productions/136329/",
       "credits": []
     }
   ]
