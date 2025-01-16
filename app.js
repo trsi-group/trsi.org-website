@@ -52,7 +52,7 @@ getData('/cms/data/productions.json')
     console.log(err);
 });
 
-getData('data/members.json')
+getData('/cms/data/members.json')
 .then(data => {
   const membersRoot = document.getElementById('members-container');
   let html = '';
@@ -65,7 +65,7 @@ getData('data/members.json')
           <img class="card-img-prod img-fluid" src="${data.members[i].avatar}" alt="...">
         </div>
         <div class="card-body">
-          <p class="card-text c64-purple">${data.members[i].title}</p>
+          <p class="card-text c64-purple">${data.members[i].handle} (${data.members[i].member_status})</p>
         </div>
       </div>
     </div>`;

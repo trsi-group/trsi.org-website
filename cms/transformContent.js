@@ -1,64 +1,13 @@
 const fs = require('fs');
 const path = require('path');
-
-// Define the directory where images are stored in the exported Contentful assets
-const ASSET_SOURCE_DIR = '/images.ctfassets.net';
-// Define the directory where images should be copied to
-const IMAGE_DIR = '';
+const { transformProductions } = require('./transformProductions');
+const { transformMembers } = require('./transformMembers');
 
 // Resolve paths dynamically
-// Assumes that '/scripts' is base path
 const contentJsonSource = path.resolve(__dirname, 'export/content.json');
 const contentImageSource = path.resolve(__dirname, 'export/images.ctfassets.net');
-const contentJsonDestination = path.resolve(__dirname, 'data/productions.json');
+const contentDestination = path.resolve(__dirname, 'data');
 const contentImageDestination = path.resolve(__dirname, 'images');
-
-/**
- * Transforms Contentful JSON export to the target simplified format.
- * @param {Object} contentfulData - The raw JSON data exported from Contentful.
- * @returns {Object} The transformed JSON.
- */
-function transformContentful(contentfulData) {
-  const { entries, assets } = contentfulData;
-
-  // Helper to find asset by ID and resolve the local path
-  const findAssetPathById = (assetId) => {
-    const asset = assets.find((a) => a.sys.id === assetId);
-    if (asset && asset.fields.file && asset.fields.file['en-US']) {
-      const fileName = asset.fields.file['en-US'].fileName;
-      return path.join(IMAGE_DIR, fileName);
-    }
-    return null;
-  };
-
-  const productions = entries
-    .filter((entry) => entry.sys.contentType.sys.id === 'productions')
-    .map((entry) => {
-      const fields = entry.fields;
-      const imageId = fields.image?.['en-US']?.sys.id;
-
-      // Extract credits from the new structure
-      const credits = fields.credits?.['en-US']?.map((credit) => ({
-        name: credit.name,
-        contribution: credit.contribution,
-      })) || [];
-
-      return {
-        title: fields.title['en-US'],
-        type: fields.type['en-US'],
-        description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
-        release_date: fields.releaseDate ? fields.releaseDate['en-US'] : '',
-        image: imageId ? path.resolve('/cms/images/', findAssetPathById(imageId)) : null,
-        platform: fields.platform ? fields.platform['en-US'] : '',
-        youtube_url: fields.youTubeUrl ? fields.youTubeUrl['en-US'] : null,
-        pouet_url: fields.pouetUrl ? fields.pouetUrl['en-US'] : null,
-        demozoo_url: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
-        credits: credits,
-      };
-    });
-
-  return { productions };
-}
 
 /**
  * Copies image assets from the Contentful export to the local image directory.
@@ -129,14 +78,23 @@ if (require.main === module) {
     copyAssetsToLocal(contentJsonData, contentImageDestination, contentImageSource);
     console.log(`Image assets written to ${contentImageDestination}`);
 
-    // Ensure the /data directory exists
-    const dataDir = path.dirname(contentJsonDestination);
-    fs.mkdirSync(dataDir, { recursive: true });
+    // Ensure the target directory exists
+    if (!fs.existsSync(contentDestination)) {
+      fs.mkdirSync(contentDestination, { recursive: true });
+    }
 
-    // Transform content and write output file
-    const transformedData = transformContentful(contentJsonData);
-    fs.writeFileSync(contentJsonDestination, JSON.stringify(transformedData, null, 2));
-    console.log(`Transformed data written to ${contentJsonDestination}`);
+    // Transform productions content and write output file
+    const productionsTarget = path.resolve(contentDestination, 'productions.json');
+    const productionsData = transformProductions(contentJsonData);
+    fs.writeFileSync(productionsTarget, JSON.stringify(productionsData, null, 2));
+    console.log(`Productions data written to productions.json`);
+
+    // Transform productions content and write output file
+    const membersTarget = path.resolve(contentDestination, 'members.json');
+    const membersData = transformMembers(contentJsonData);
+    fs.writeFileSync(membersTarget, JSON.stringify(membersData, null, 2));
+    console.log(`Members data written to members.json`);
+
   } catch (error) {
     console.error('Error processing data:', error);
     process.exit(1);
@@ -144,4 +102,4 @@ if (require.main === module) {
 }
 
 // Export for module usage
-module.exports = { transformContentful, copyAssetsToLocal };
+module.exports = { copyAssetsToLocal };
