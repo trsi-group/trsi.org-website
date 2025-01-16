@@ -14,7 +14,7 @@
   "skipWebhooks": false,
   "contentOnly": true,
   "queryEntries": [
-    "sys.contentType.sys.id[in]=member,productions"
+    "sys.contentType.sys.id[in]=member,productions,graphics"
   ],
   "queryAssets": [],
   "downloadAssets": true,

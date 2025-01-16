@@ -29,7 +29,7 @@ function transformMembers(contentfulData) {
         real_ame: fields.realName['en-US'],
         avatar: imageId ? path.resolve('/cms/images/', findAssetPathById(imageId)) : null,
         member_since: fields.memberSince ? fields.memberSince['en-US'] : null,
-        members_status: fields.memberStatus ? fields.memberStatus['en-US'] : null,
+        member_status: fields.memberStatus ? fields.memberStatus['en-US'] : null,
       };
     });
 
