@@ -52,6 +52,31 @@ getData('/cms/data/productions.json')
     console.log(err);
 });
 
+getData('/cms/data/graphics.json')
+.then(data => {
+  const graphicsRoot = document.getElementById('graphics-container');
+  let html = '';
+  
+  console.log(data);
+  for (let i in data.graphics) {
+    // const year = data.graphics[i].release_date.split("-")[0];
+    html += `<div class="col">
+      <div class="card h-100">
+        <div>
+          <img class="card-img-prod img-fluid" src="${data.graphics[i].image}" alt="...">
+        </div>
+        <div class="card-body">
+          <p class="card-text c64-purple">${data.graphics[i].title})</p>
+        </div>
+      </div>
+    </div>`;
+  }
+  graphicsRoot.innerHTML = html;
+})
+.catch(err => {
+    console.log(err);
+});
+
 getData('/cms/data/members.json')
 .then(data => {
   const membersRoot = document.getElementById('members-container');
