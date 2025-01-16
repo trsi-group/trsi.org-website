@@ -52,7 +52,7 @@ getData('/cms/data/productions.json')
     console.log(err);
 });
 
-getData('data/members.json')
+getData('/cms/data/members.json')
 .then(data => {
   const membersRoot = document.getElementById('members-container');
   let html = '';
