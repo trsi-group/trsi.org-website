@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { transformProductions } = require('./transformProductions');
 const { transformMembers } = require('./transformMembers');
+const { transformGraphics } = require('./transformGraphics');
 
 // Resolve paths dynamically
 const contentJsonSource = path.resolve(__dirname, 'export/content.json');
@@ -83,17 +84,23 @@ if (require.main === module) {
       fs.mkdirSync(contentDestination, { recursive: true });
     }
 
-    // Transform productions content and write output file
+    // Transform productions content and write to file
     const productionsTarget = path.resolve(contentDestination, 'productions.json');
     const productionsData = transformProductions(contentJsonData);
     fs.writeFileSync(productionsTarget, JSON.stringify(productionsData, null, 2));
     console.log(`Productions data written to productions.json`);
 
-    // Transform productions content and write output file
+    // Transform members content and write to file
     const membersTarget = path.resolve(contentDestination, 'members.json');
     const membersData = transformMembers(contentJsonData);
     fs.writeFileSync(membersTarget, JSON.stringify(membersData, null, 2));
     console.log(`Members data written to members.json`);
+
+    // Transform members content and write to file
+    const graphicsTarget = path.resolve(contentDestination, 'graphics.json');
+    const graphicsData = transformGraphics(contentJsonData);
+    fs.writeFileSync(graphicsTarget, JSON.stringify(graphicsData, null, 2));
+    console.log(`Graphics data written to graphics.json`);
 
   } catch (error) {
     console.error('Error processing data:', error);
