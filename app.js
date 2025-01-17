@@ -46,11 +46,11 @@ getData('/cms/data/productions.json')
     html += `<div class="col">
       <div class="card h-100 border-0 bg-secondary">
         <div class="d-flex h-100 align-items-center bg-black">
-          <img class="card-img-top img-fluid" src="${image}" alt="...">
+          <img class="card-img-top img-fluid rounded-0" src="${image}" alt="...">
         </div>
         <div class="card-body">
           <h5 class="card-text c64-yellow">${data.productions[i].title} (${year})</h5>
-          <p class="card-text c64-yellow">${data.productions[i].description}</p>
+          <p class="card-text c64-white">${data.productions[i].description}</p>
         </div>
       </div>
     </div>`;
@@ -72,10 +72,10 @@ getData('/cms/data/graphics.json')
     html += `<div class="col">
       <div class="card h-100 border-0 bg-secondary">
         <div class="d-flex h-100 align-items-center bg-black">
-          <img class="card-img-top img-fluid" src="${image}" alt="...">
+          <img class="card-img-top img-fluid rounded-0" src="${image}" alt="...">
         </div>
         <div class="card-body">
-          <p class="card-text c64-yellow">${data.graphics[i].title})</p>
+          <p class="card-text c64-yellow">${data.graphics[i].title}</p>
         </div>
       </div>
     </div>`;
@@ -97,10 +97,10 @@ getData('/cms/data/members.json')
     html += `<div class="col">
       <div class="card h-100 border-0 bg-secondary">
         <div class="d-flex h-100 align-items-center bg-black">
-          <img class="card-img-top img-fluid" src="${image}" alt="...">
+          <img class="card-img-top img-fluid rounded-0" src="${image}" alt="...">
         </div>
         <div class="card-body">
-          <p class="card-text c64-yellow">${data.members[i].handle} (${data.members[i].member_status})</p>
+          <h5 class="card-text c64-yellow d-inline">${data.members[i].handle}</h5><span class="card-text c64-light-gray"> (${data.members[i].member_status})</span>
         </div>
       </div>
     </div>`;
