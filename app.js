@@ -18,6 +18,13 @@
 //     request.send();
 //   })
 // }
+
+// Helper to adjust image path for generated sizes
+function adjustImagePath(imagePath, newDir) {
+  const parts = imagePath.split('/');
+  return [...parts.slice(0, -1), newDir, parts.at(-1)].join('/');
+}
+
 const getData = async (resource) => {
   const response = await fetch(resource);
   if (response.status !== 200) {
@@ -35,10 +42,11 @@ getData('/cms/data/productions.json')
   console.log(data);
   for (let i in data.productions) {
     const year = data.productions[i].release_date.split("-")[0];
+    const image = adjustImagePath(data.productions[i].image || "placeholder.webp", "card");
     html += `<div class="col">
       <div class="card h-100">
         <div>
-          <img class="card-img-prod img-fluid" src="${data.productions[i].image}" alt="...">
+          <img class="card-img-prod img-fluid" src="${image}" alt="...">
         </div>
         <div class="card-body">
           <p class="card-text c64-purple">${data.productions[i].title} (${year})</p>
@@ -59,11 +67,11 @@ getData('/cms/data/graphics.json')
   
   console.log(data);
   for (let i in data.graphics) {
-    // const year = data.graphics[i].release_date.split("-")[0];
+    const image = adjustImagePath(data.graphics[i].image || "placeholder.webp", "card");
     html += `<div class="col">
       <div class="card h-100">
         <div>
-          <img class="card-img-prod img-fluid" src="${data.graphics[i].image}" alt="...">
+          <img class="card-img-prod img-fluid" src="${image}" alt="...">
         </div>
         <div class="card-body">
           <p class="card-text c64-purple">${data.graphics[i].title})</p>
@@ -84,10 +92,11 @@ getData('/cms/data/members.json')
   
   console.log(data);
   for (let i in data.members) {
+    const image = adjustImagePath(data.members[i].avatar || "placeholder.webp", "card");
     html += `<div class="col">
       <div class="card h-100">
         <div>
-          <img class="card-img-prod img-fluid" src="${data.members[i].avatar}" alt="...">
+          <img class="card-img-prod img-fluid" src="${image}" alt="...">
         </div>
         <div class="card-body">
           <p class="card-text c64-purple">${data.members[i].handle} (${data.members[i].member_status})</p>
