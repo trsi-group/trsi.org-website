@@ -13,7 +13,7 @@ function transformMembers(contentfulData) {
   const findAssetPathById = (assetId) => {
     const asset = assets.find((a) => a.sys.id === assetId);
     if (asset && asset.fields.file && asset.fields.file['en-US']) {
-      return asset.fields.file['en-US'].fileName;
+      return asset.fields.file['en-US'].fileName.replace(/\.[^/.]+$/, ".webp");
     }
     return null;
   };
@@ -26,7 +26,7 @@ function transformMembers(contentfulData) {
 
       return {
         handle: fields.handle['en-US'],
-        real_ame: fields.realName['en-US'],
+        real_name: fields.realName['en-US'],
         avatar: imageId ? path.resolve('/cms/images/', findAssetPathById(imageId)) : null,
         member_since: fields.memberSince ? fields.memberSince['en-US'] : null,
         member_status: fields.memberStatus ? fields.memberStatus['en-US'] : null,

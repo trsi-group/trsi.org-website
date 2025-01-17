@@ -13,7 +13,7 @@ function transformGraphics(contentfulData) {
   const findAssetPathById = (assetId) => {
     const asset = assets.find((a) => a.sys.id === assetId);
     if (asset && asset.fields.file && asset.fields.file['en-US']) {
-      return asset.fields.file['en-US'].fileName;
+      return asset.fields.file['en-US'].fileName.replace(/\.[^/.]+$/, ".webp");
     }
     return null;
   };
