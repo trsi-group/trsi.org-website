@@ -44,12 +44,13 @@ getData('/cms/data/productions.json')
     const year = data.productions[i].release_date.split("-")[0];
     const image = adjustImagePath(data.productions[i].image || "placeholder.webp", "card");
     html += `<div class="col">
-      <div class="card h-100">
-        <div>
-          <img class="card-img-prod img-fluid" src="${image}" alt="...">
+      <div class="card h-100 border-0 bg-secondary">
+        <div class="d-flex h-100 align-items-center bg-black">
+          <img class="card-img-top img-fluid" src="${image}" alt="...">
         </div>
         <div class="card-body">
-          <p class="card-text c64-purple">${data.productions[i].title} (${year})</p>
+          <h5 class="card-text c64-yellow">${data.productions[i].title} (${year})</h5>
+          <p class="card-text c64-yellow">${data.productions[i].description}</p>
         </div>
       </div>
     </div>`;
@@ -69,12 +70,12 @@ getData('/cms/data/graphics.json')
   for (let i in data.graphics) {
     const image = adjustImagePath(data.graphics[i].image || "placeholder.webp", "card");
     html += `<div class="col">
-      <div class="card h-100">
-        <div>
-          <img class="card-img-prod img-fluid" src="${image}" alt="...">
+      <div class="card h-100 border-0 bg-secondary">
+        <div class="d-flex h-100 align-items-center bg-black">
+          <img class="card-img-top img-fluid" src="${image}" alt="...">
         </div>
         <div class="card-body">
-          <p class="card-text c64-purple">${data.graphics[i].title})</p>
+          <p class="card-text c64-yellow">${data.graphics[i].title})</p>
         </div>
       </div>
     </div>`;
@@ -94,12 +95,12 @@ getData('/cms/data/members.json')
   for (let i in data.members) {
     const image = adjustImagePath(data.members[i].avatar || "placeholder.webp", "card");
     html += `<div class="col">
-      <div class="card h-100">
-        <div>
-          <img class="card-img-prod img-fluid" src="${image}" alt="...">
+      <div class="card h-100 border-0 bg-secondary">
+        <div class="d-flex h-100 align-items-center bg-black">
+          <img class="card-img-top img-fluid" src="${image}" alt="...">
         </div>
         <div class="card-body">
-          <p class="card-text c64-purple">${data.members[i].handle} (${data.members[i].member_status})</p>
+          <p class="card-text c64-yellow">${data.members[i].handle} (${data.members[i].member_status})</p>
         </div>
       </div>
     </div>`;
