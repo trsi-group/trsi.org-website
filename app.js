@@ -45,7 +45,7 @@ getData('/cms/data/productions.json')
     const image = adjustImagePath(data.productions[i].image || "placeholder.webp", "card");
     html += `<div class="col">
       <div class="card h-100 border-0 bg-secondary">
-        <div class="d-flex h-100 align-items-center">
+        <div class="d-flex h-100 align-items-center bg-black">
           <img class="card-img-top img-fluid" src="${image}" alt="...">
         </div>
         <div class="card-body">
@@ -71,7 +71,7 @@ getData('/cms/data/graphics.json')
     const image = adjustImagePath(data.graphics[i].image || "placeholder.webp", "card");
     html += `<div class="col">
       <div class="card h-100 border-0 bg-secondary">
-        <div>
+        <div class="d-flex h-100 align-items-center bg-black">
           <img class="card-img-top img-fluid" src="${image}" alt="...">
         </div>
         <div class="card-body">
@@ -96,7 +96,7 @@ getData('/cms/data/members.json')
     const image = adjustImagePath(data.members[i].avatar || "placeholder.webp", "card");
     html += `<div class="col">
       <div class="card h-100 border-0 bg-secondary">
-        <div>
+        <div class="d-flex h-100 align-items-center bg-black">
           <img class="card-img-top img-fluid" src="${image}" alt="...">
         </div>
         <div class="card-body">
