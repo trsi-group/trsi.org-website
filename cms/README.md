@@ -1,21 +1,14 @@
-# Contentful Export Tool
+# CMS (Contentful) Tooling
 
-This script exports all content and assets from Contentful, and transforms the content for consumption by app.js to build the site. Currenty it only support data for our productions.
+This bundles all the code and data for pulling and transforming content managed in [Contentful](https://app.contentful.com/).
 
-1. copy ```example_config.json``` to ```config.json``` and add the Contentful API secrets.
+[Contentful CLI](https://github.com/contentful/contentful-cli/tree/main/docs/space/export) allows to export a set of content types and assets, using configuration in ```config.json```. API tokens for Contentful access need to be configured in ```.env```. 
 
-2. execute script from /cms-content dir.
+```scripts``` contains various helper modules for fetching content and processing the JSON and assets export.
 
-```
-node ./transform-content.js productions.json ./export/
-```
+Run ```npm run build``` to pull latest content, and transform images and JSON to site specific requirements. The front end code pulls JSON data for each content type from the defined export targets. Image assets get optiomizes by conversion to webp format and resize to for specific use cases (e.g. card).
 
-3. Copy transformed export data and image assets.
-
-```
-cp export/productions.json ../data/ \
-cp export/images/* ../images/productions/
-```
+The current config stored all processed data in the ```cms``` folder. ```.gitignore``` rules exist to avoid checking in any of the CSM data.
 
 ## additional info
 
