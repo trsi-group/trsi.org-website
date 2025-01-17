@@ -1,27 +1,7 @@
-# trsi.org-website
-TRSI website
+# TRSI website
 
-## Data sources for building out our site
+our new website \o/
 
-### Demozoo
+check the readme in /cms for content integration. run ```npm run build``` to integrate CMS content. Use live server or similar for dev.
 
-API endpoint with basic group info and all active and inactive members
-
-https://demozoo.org/api/v1/releasers/69/
-
-https://demozoo.org/api/v1/releasers/69/productions/?format=json # productions
-
-### Pouet.net
-
-API endpoint with our releases on Pouet.net
-
-https://api.pouet.net/v1/group/?id=280
-
-### TRSI Records auf Discogs
-
-https://www.discogs.com/de/search?q=trsi+recordz&type=all
-
-### TRSI CSDB
-will return XML
-
-https://csdb.dk/webservice/?type=group&id=915
+the sleeping gods are back!
