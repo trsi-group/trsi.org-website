@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return [...parts.slice(0, -1), newDir, parts.at(-1)].join('/');
   }
 
-  console.log(document);
-
   const getData = async (resource) => {
     const response = await fetch(resource);
     if (response.status !== 200) {
