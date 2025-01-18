@@ -8,7 +8,7 @@ This bundles all the code and data for pulling and transforming content managed 
 
 Run ```npm run build``` to pull latest content, and transform images and JSON to site specific requirements. The front end code pulls JSON data for each content type from the defined export targets. Image assets get optiomizes by conversion to webp format and resize to for specific use cases (e.g. card).
 
-The current config stored all processed data in the ```cms``` folder. ```.gitignore``` rules exist to avoid checking in any of the CSM data.
+With Vite, the ```vite.config.js``` setup copies all processed data in the ```cms``` folder (e.g. data, images) to the ```dist``` folder. ```.gitignore``` rules exist to avoid checking in any of the CSM data.
 
 ## additional info
 

@@ -11,9 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "fetch-content": "node cms/scripts/fetchContent.js",
     "process-content": "node cms/scripts/processContent.js",
-    "copy-content": "node cms/scripts/copyContent.js",
+    "build": "npm run fetch-content && npm run process-content && vite build --watch",
     "dev": "vite",
-    "build": "npm run fetch-content && npm run process-content && vite build && npm run copy-content",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -23,6 +22,7 @@
     "sharp": "^0.33.5"
   },
   "devDependencies": {
-    "vite": "^6.0.5"
+    "vite": "^6.0.5",
+    "vite-plugin-static-copy": "^2.2.0"
   }
 }
