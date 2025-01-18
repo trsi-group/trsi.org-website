@@ -1,12 +1,11 @@
-const fs = require('fs');
-const path = require('path');
+import { resolve } from 'path';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
  * @param {Object} contentfulData - The raw JSON data exported from Contentful.
  * @returns {Object} The transformed JSON.
  */
-function transformGraphics(contentfulData) {
+export function transformGraphics(contentfulData) {
   const { entries, assets } = contentfulData;
 
   // Helper to find asset by ID and resolve the local path
@@ -33,7 +32,7 @@ function transformGraphics(contentfulData) {
       return {
         title: fields.title['en-US'],
         type: fields.type['en-US'],
-        image: imageId ? path.resolve('/cms/images/', findAssetPathById(imageId)) : null,
+        image: imageId ? resolve('/cms/images/', findAssetPathById(imageId)) : null,
         platform: fields.platform ? fields.platform['en-US'] : null,
         download: fields.download ? fields.download['en-US'] : null,
         credits: credits,
@@ -44,4 +43,4 @@ function transformGraphics(contentfulData) {
 }
 
 // Export for module usage
-module.exports = { transformGraphics };
+export const name = 'transformGraphics';

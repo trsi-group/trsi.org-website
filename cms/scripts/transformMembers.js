@@ -1,12 +1,11 @@
-const fs = require('fs');
-const path = require('path');
+import path from'path';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
  * @param {Object} contentfulData - The raw JSON data exported from Contentful.
  * @returns {Object} The transformed JSON.
  */
-function transformMembers(contentfulData) {
+export function transformMembers(contentfulData) {
   const { entries, assets } = contentfulData;
 
   // Helper to find asset by ID and resolve the local path
@@ -37,4 +36,4 @@ function transformMembers(contentfulData) {
 }
 
 // Export for module usage
-module.exports = { transformMembers };
+export const name = 'transformMembers'

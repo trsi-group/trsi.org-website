@@ -1,12 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-const sharp = require('sharp');
+import fs from 'fs';
+import path from 'path';
+import sharp from 'sharp';
 
 /**
  * Copies image assets from the Contentful export to the local image directory.
  * @param {Object} contentfulData - The raw JSON data exported from Contentful.
  */
-function transformImages(contentfulData, exportDir, assetDir) {
+export function transformImages(contentfulData, exportDir, assetDir) {
   const { assets } = contentfulData;
 
   // Ensure the target directory exists
@@ -98,4 +98,4 @@ function transformImages(contentfulData, exportDir, assetDir) {
 }
 
 // Export for module usage
-module.exports = { transformImages };
+export const name = 'transformImages';

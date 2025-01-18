@@ -2,19 +2,26 @@
   "name": "trsi.org-website",
   "version": "1.0.0",
   "description": "TRSI Website",
-  "main": "app.js",
+  "main": "src/main.js",
+  "author": "TRSI",
+  "license": "ISC",
+  "private": true,
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "fetch-content": "node cms/scripts/fetchContent.js",
     "process-content": "node cms/scripts/processContent.js",
-    "build": "npm run fetch-content && npm run process-content"
+    "dev": "vite",
+    "build": "npm run fetch-content && npm run process-content && vite build",
+    "preview": "vite preview"
   },
-  "author": "TRSI",
-  "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.3.3",
     "contentful-cli": "^3.7.3",
     "dotenv": "^16.4.7",
     "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "vite": "^6.0.5"
   }
 }
