@@ -32,7 +32,7 @@ export function transformGraphics(contentfulData) {
       return {
         title: fields.title['en-US'],
         type: fields.type['en-US'],
-        image: imageId ? resolve('/cms/images/', findAssetPathById(imageId)) : null,
+        image: imageId ? resolve('/images/', findAssetPathById(imageId)) : null,
         platform: fields.platform ? fields.platform['en-US'] : null,
         download: fields.download ? fields.download['en-US'] : null,
         credits: credits,

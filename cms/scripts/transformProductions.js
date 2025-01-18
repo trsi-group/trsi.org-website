@@ -34,7 +34,7 @@ export function transformProductions(contentfulData) {
         type: fields.type['en-US'],
         description: fields.description ? fields.description?.['en-US']?.content?.[0]?.content?.[0]?.value : '',
         release_date: fields.releaseDate ? fields.releaseDate['en-US'] : '',
-        image: imageId ? resolve('/cms/images/', findAssetPathById(imageId)) : null,
+        image: imageId ? resolve('/images/', findAssetPathById(imageId)) : null,
         platform: fields.platform ? fields.platform['en-US'] : '',
         youtube_url: fields.youTubeUrl ? fields.youTubeUrl['en-US'] : null,
         pouet_url: fields.pouetUrl ? fields.pouetUrl['en-US'] : null,

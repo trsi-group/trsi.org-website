@@ -1,4 +1,4 @@
-import path from'path';
+import path from 'path';
 
 /**
  * Transforms Contentful JSON export to the target simplified format.
@@ -26,7 +26,7 @@ export function transformMembers(contentfulData) {
       return {
         handle: fields.handle['en-US'],
         real_name: fields.realName['en-US'],
-        avatar: imageId ? path.resolve('/cms/images/', findAssetPathById(imageId)) : null,
+        avatar: imageId ? path.resolve('/images/', findAssetPathById(imageId)) : null,
         member_since: fields.memberSince ? fields.memberSince['en-US'] : null,
         member_status: fields.memberStatus ? fields.memberStatus['en-US'] : null,
       };

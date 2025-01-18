@@ -11,8 +11,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "fetch-content": "node cms/scripts/fetchContent.js",
     "process-content": "node cms/scripts/processContent.js",
+    "copy-content": "node cms/scripts/copyContent.js",
     "dev": "vite",
-    "build": "npm run fetch-content && npm run process-content && vite build",
+    "build": "npm run fetch-content && npm run process-content && vite build && npm run copy-content",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return data;
   }
 
-  getData('/cms/data/productions.json')
+  getData('/data/productions.json')
   .then(data => {
     const productionsRoot = document.getElementById('productions-container');
     let html = '';
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(err);
   });
 
-  getData('/cms/data/graphics.json')
+  getData('/data/graphics.json')
   .then(data => {
     const graphicsRoot = document.getElementById('graphics-container');
     let html = '';
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(err);
   });
 
-  getData('/cms/data/members.json')
+  getData('/data/members.json')
   .then(data => {
     const membersRoot = document.getElementById('members-container');
     let html = '';
