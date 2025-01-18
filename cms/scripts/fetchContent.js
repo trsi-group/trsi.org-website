@@ -1,15 +1,17 @@
-require('dotenv').config(); // Load environment variables from .env
+import 'dotenv/config'; // Load environment variables from .env
+import { exec } from 'child_process';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
 
-const { exec } = require('child_process');
-const path = require('path');
+// Get the directory of the current file
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// Assumes that '/scripts' is base path
-const configPath = path.resolve(__dirname, '../config.json');
-const exportDir = path.resolve(__dirname, '../export');
+// Assumes that '/scripts' is the base path
+const configPath = resolve(__dirname, '../config.json');
+const exportDir = resolve(__dirname, '../export');
 
 // Load tokens from environment variables
-const DELIVERY_TOKEN = process.env.DELIVERY_TOKEN;
-const MANAGEMENT_TOKEN = process.env.MANAGEMENT_TOKEN;
+const { DELIVERY_TOKEN, MANAGEMENT_TOKEN } = process.env;
 
 if (!DELIVERY_TOKEN || !MANAGEMENT_TOKEN) {
   console.error('Error: DELIVERY_TOKEN and MANAGEMENT_TOKEN must be set in the .env file.');

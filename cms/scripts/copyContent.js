@@ -1,17 +1,19 @@
-const { exec } = require('child_process');
-const path = require('path');
+import { exec } from 'child_process';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
 // Resolve paths dynamically
 // Assumes that '/scripts' is base path
-const contentJsonSource = path.resolve(__dirname, 'export/export.json');
-const contentJsonDestination = path.resolve(__dirname, 'data/productions.json');
-const imagesSource = path.resolve(__dirname, 'export/images.ctfassets.net/*');
-const imagesDestination = path.resolve(__dirname, 'images/');
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const contentJsonSource = resolve(__dirname, '../data');
+const contentJsonDestination = resolve(__dirname, '../../dist/');
+const imagesSource = resolve(__dirname, '../images');
+const imagesDestination = resolve(__dirname, '../../dist/');
 
 // Commands with resolved paths
 const commands = [
-  `cp ${contentJsonSource} ${contentJsonDestination}`,
-  `cp ${imagesSource} ${imagesDestination}`
+  `cp -r ${contentJsonSource} ${contentJsonDestination}`,
+  `cp -r ${imagesSource} ${imagesDestination}`
 ];
 
 function runCommand(command) {
