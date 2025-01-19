@@ -6,6 +6,9 @@ export default {
     rollupOptions: {
       input: {
         index: 'index.html',          // Home page
+        productions: 'productions.html',         // About page
+        music: 'music.html',         // About page
+        graphics: 'graphics.html',         // About page
         members: 'members.html',         // About page
       }
     }

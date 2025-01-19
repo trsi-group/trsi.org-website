@@ -19,13 +19,13 @@ export default function Header() {
               <a href="/" class="nav-link ps-0">Roots</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Demos</a>
+              <a href="productions.html" class="nav-link">Productions</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Music</a>
+              <a href="music.html" class="nav-link">Music</a>
             </li>
             <li class="nav-item">
-              <a href="#graphics" class="nav-link">Graphics</a>
+              <a href="graphics.html" class="nav-link">Graphics</a>
             </li>
             <li class="nav-item">
               <a href="members.html" class="nav-link">Members</a>
