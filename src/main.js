@@ -1,4 +1,5 @@
 import Header from './components/header';
+import TrsiCard from './components/trsi-card';
 
 const trsi = {
   utils: {},
@@ -62,19 +63,15 @@ trsi.pages = {
       
       console.log(data);
       for (let i in data.productions) {
-        const year = data.productions[i].release_date.split("-")[0];
         const image = this.adjustImagePath(data.productions[i].image || "placeholder.webp", "card");
-        html += `<div class="col">
-          <div class="card h-100 border-0 bg-secondary">
-            <div class="d-flex h-100 align-items-center bg-black">
-              <img class="card-img-top img-fluid rounded-0" src="${image}" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-text c64-yellow">${data.productions[i].title} (${year})</h5>
-              <p class="card-text c64-white">${data.productions[i].description}</p>
-            </div>
-          </div>
-        </div>`;
+        html += TrsiCard(
+          data.productions[i].title,
+          data.productions[i].description,
+          image,
+          data.productions[i].type,
+          data.productions[i].youtube,
+          data.productions[i].download,
+        );
       }
       productionsRoot.innerHTML = html;
     })
@@ -229,19 +226,15 @@ trsi.pages = {
       
       console.log(data);
       for (let i in data.productions) {
-        const year = data.productions[i].release_date.split("-")[0];
         const image = this.adjustImagePath(data.productions[i].image || "placeholder.webp", "card");
-        html += `<div class="col">
-          <div class="card h-100 border-0 bg-secondary">
-            <div class="d-flex h-100 align-items-center bg-black">
-              <img class="card-img-top img-fluid rounded-0" src="${image}" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-text c64-yellow">${data.productions[i].title} (${year})</h5>
-              <p class="card-text c64-white">${data.productions[i].description}</p>
-            </div>
-          </div>
-        </div>`;
+        html += TrsiCard(
+          data.productions[i].title,
+          data.productions[i].description,
+          image,
+          data.productions[i].type,
+          data.productions[i].youtube,
+          data.productions[i].download,
+        );
       }
       productionsRoot.innerHTML = html;
     })
