@@ -21,6 +21,7 @@ export function transformProductions(contentfulData) {
     .filter((entry) => entry.sys.contentType.sys.id === 'productions')
     .map((entry) => {
       const fields = entry.fields;
+      const metadata = entry.metadata;
       const imageId = fields.image?.['en-US']?.sys.id;
 
       // Extract credits from the new structure
@@ -28,6 +29,8 @@ export function transformProductions(contentfulData) {
         name: credit.name,
         contribution: credit.contribution,
       })) || [];
+
+      const tags = metadata.tags.map(tag => tag.sys.id);
 
       return {
         title: fields.title['en-US'],
@@ -40,6 +43,7 @@ export function transformProductions(contentfulData) {
         pouet_url: fields.pouetUrl ? fields.pouetUrl['en-US'] : null,
         demozoo_url: fields.demozooUrl ? fields.demozooUrl['en-US'] : null,
         credits: credits,
+        tags: tags,
       };
     });
 

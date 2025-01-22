@@ -5,11 +5,11 @@ export default {
   build: {
     rollupOptions: {
       input: {
-        index: 'index.html',          // Home page
-        productions: 'productions.html',         // About page
-        music: 'music.html',         // About page
-        graphics: 'graphics.html',         // About page
-        members: 'members.html',         // About page
+        index: 'index.html',
+        productions: 'productions.html',
+        music: 'music.html',
+        graphics: 'graphics.html',
+        members: 'members.html',
       }
     }
   },
