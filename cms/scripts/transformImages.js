@@ -43,6 +43,7 @@ export function transformImages(contentfulData, exportDir, assetDir) {
       const sourcePath = findFileRecursively(assetDir, fileName); // Find file recursively
       if (!sourcePath) {
         console.log('Source images not available!');
+        console.log(`asset dir: ${assetDir}, filename: ${fileName}`);
         return null;
       }
 

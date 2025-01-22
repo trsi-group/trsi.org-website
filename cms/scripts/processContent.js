@@ -33,7 +33,6 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     const productionsDest = resolve(jsonDest, 'productions.json');
     const productionsData = transformProductions(jsonData);
     writeFileSync(productionsDest, JSON.stringify(productionsData, null, 2));
-    console.log(productionsData);
     console.log(`Productions data written to productions.json`);
 
     // Transform members content and write to file
