@@ -77,7 +77,6 @@ const trsi = {
       document.getElementById('header').innerHTML = Header();
       Graphics();
       document.getElementById('footer').innerHTML = Footer();
-      
     },
     members() {
       document.getElementById('header').innerHTML = Header();
