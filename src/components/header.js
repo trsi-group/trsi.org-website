@@ -4,7 +4,7 @@ export default function Header() {
     <nav class="navbar navbar-expand-md navbar-dark fs-4 fst-italic fw-bold text-rimary">
       <div class="container-fluid">
         <a href="#" class="navbar-brand me-none">
-          <img src="public/trsi-logo.png" height="30" alt="">
+          <img src="trsi-logo.png" height="30" alt="">
         </a>
         <span class="navbar-text d-none d-md-inline">Back to the...</span>
         <!-- toggle button for mobile-->
@@ -16,19 +16,19 @@ export default function Header() {
         <div class="navbar-collapse collapse align-center justify-content-start text-primary" id="main-nav">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a href="/" class="nav-link ps-0">Roots</a>
+            <a href="/" class="nav-link ps-0">>Roots</a>
             </li>
             <li class="nav-item">
-              <a href="productions.html" class="nav-link">Productions</a>
+              <a href="productions.html" class="nav-link">>Productions</a>
             </li>
             <li class="nav-item">
-              <a href="music.html" class="nav-link">Music</a>
+              <a href="music.html" class="nav-link">>Music</a>
             </li>
             <li class="nav-item">
-              <a href="graphics.html" class="nav-link">Graphics</a>
+              <a href="graphics.html" class="nav-link">>Graphics</a>
             </li>
             <li class="nav-item">
-              <a href="members.html" class="nav-link">Members</a>
+              <a href="members.html" class="nav-link">>Members</a>
             </li>
           </ul>
         </div>
