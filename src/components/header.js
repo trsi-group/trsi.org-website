@@ -3,9 +3,6 @@ export default function Header() {
   <div class="container-lg">
     <nav class="navbar navbar-expand-md navbar-dark fs-4 fst-italic fw-bold text-rimary">
       <div class="container-fluid">
-        <a href="#" class="navbar-brand me-none">
-          <img src="trsi-logo.png" height="30" alt="">
-        </a>
         <span class="navbar-text d-none d-md-inline">Back to the...</span>
         <!-- toggle button for mobile-->
         <button class="navbar-toggler" type="button" 
