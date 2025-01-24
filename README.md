@@ -2,6 +2,15 @@
 
 our new website \o/
 
-check the readme in /cms for content integration. run ```npm run build``` to integrate CMS content. Use live server or similar for dev.
+## Commands
 
-the sleeping gods are back!
+- ```npm run build``` to integrate CMS content. 
+
+- ```npm run build:watch``` to observe live for repo changes
+
+- ```npm run preview``` to run vite preview server
+
+check the readme in /cms for content integration details.
+
+
+#### the sleeping gods are back!
