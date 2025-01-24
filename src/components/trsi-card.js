@@ -7,7 +7,7 @@ export default function TrsiCard(title, description, image, type, youtube, downl
       </div>
       <div class="card-body">
         <p class="card-text c64-white h5">${type}</p>
-        <h3 class="card-text c64-yellow">${title}</h3>
+        <p class="card-text c64-yellow h3">${title}</p>
         ${description ? `<p class="card-text c64-white">${description}</p>` : ""}
         ${download ? `<a class="card-text c64-white" href="${download}">Download</a>` : ""}
         ${youtube ? `, <a class="card-text c64-white" href="${youtube}">YouTube</a>` : ""}
