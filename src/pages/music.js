@@ -7,7 +7,6 @@ export default function music() {
     const musicRoot = document.getElementById('music-container');
     let html = '';
     
-    console.log(data);
     for (let i in data.music) {
       html += `<div class="col">
         <div class="card h-100 border-0 bg-secondary">

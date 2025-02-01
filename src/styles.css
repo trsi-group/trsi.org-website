@@ -17,6 +17,11 @@ body {
   font-weight: bold;
 }
 
+.social-icon {
+  font-size: 1.5rem; 
+  color: white;
+}
+
 #top-section {
   width: 100%;
   text-align: center;

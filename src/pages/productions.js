@@ -7,7 +7,6 @@ export default function productions() {
     const productionsRoot = document.getElementById('productions-container');
     let html = '';
     
-    console.log(data);
     for (let i in data.productions) {
       const image = adjustImagePath(data.productions[i].image || "placeholder.webp", "card");
       html += TrsiCard(
