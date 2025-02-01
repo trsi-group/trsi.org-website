@@ -7,7 +7,6 @@ export default function productions() {
     const membersRoot = document.getElementById('members-container');
     let html = '';
     
-    console.log(data);
     for (let i in data.members) {
       const image = adjustImagePath(data.members[i].avatar || "placeholder.webp", "card");
       html += `<div class="col">
