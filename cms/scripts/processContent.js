@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import { transformProductions } from './transformProductions.js';
 import { transformMembers } from './transformMembers.js';
 import { transformGraphics } from './transformGraphics.js';
+import { transformMusic } from './transformMusic.js';
 import { transformImages } from './transformImages.js';
 
 // Resolve paths dynamically
@@ -46,6 +47,12 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     const graphicsData = transformGraphics(jsonData);
     writeFileSync(graphicsDest, JSON.stringify(graphicsData, null, 2));
     console.log(`Graphics data written to graphics.json`);
+
+    // Transform music content and write to file
+    const musicDest = resolve(jsonDest, 'music.json');
+    const musicData = transformMusic(jsonData);
+    writeFileSync(musicDest, JSON.stringify(musicData, null, 2));
+    console.log(`Music data written to music.json`);
 
   } catch (error) {
     console.error('Error processing data:', error);

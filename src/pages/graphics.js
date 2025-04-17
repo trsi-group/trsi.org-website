@@ -7,7 +7,6 @@ export default function graphics() {
     const graphicsRoot = document.getElementById('graphics-container');
     let html = '';
     
-    console.log(data);
     for (let i in data.graphics) {
       const image = adjustImagePath(data.graphics[i].image || "placeholder.webp", "card");
       html += `<div class="col">

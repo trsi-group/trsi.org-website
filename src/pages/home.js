@@ -11,7 +11,6 @@ export default function home() {
         return new Date(b.release_date) - new Date(a.release_date);
       });
 
-      console.log(sortedProductions);
       sortedProductions.slice(0, 3).forEach((production) => {
         const image = adjustImagePath(production.image || "placeholder.webp", "card");
         html += TrsiCard(

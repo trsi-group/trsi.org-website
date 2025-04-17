@@ -1,22 +1,24 @@
-import { adjustImagePath, getData} from '../main.js';
+import { getData} from '../main.js';
 
-export default function productions() {
+export default function music() {
   getData('/data/music.json')
   .then(data => {
 
     const musicRoot = document.getElementById('music-container');
     let html = '';
     
-    console.log(data);
     for (let i in data.music) {
-      const image = adjustImagePath(data.music[i].avatar || "placeholder.webp", "card");
       html += `<div class="col">
         <div class="card h-100 border-0 bg-secondary">
           <div class="d-flex h-100 align-items-center bg-black">
-            <img class="card-img-top img-fluid rounded-0" src="${image}" alt="...">
+            <img class="card-img-top rounded-0" src="sound-waves.svg" width="200" height="200" alt="...">
           </div>
           <div class="card-body">
-            <h5 class="card-text c64-yellow d-inline">${data.music[i].handle}</h5><span class="card-text c64-light-gray"> (${data.members[i].member_status})</span>
+            <p class="card-text c64-white h5">${data.music[i].type}</p>
+            <h3 class="card-text c64-yellow">${data.music[i].title}</h3>
+            ${data.music[i].description ? `<p class="card-text c64-white">${data.music[i].description}</p>` : ""}
+            ${data.music[i].download_url ? `<a class="card-text c64-white" href="${data.music[i].download_url}">Download</a>` : ""}
+            ${data.music[i].demozoo_url ? `, <a class="card-text c64-white" href="${data.music[i].demozoo_url}">Demozoo</a>` : ""}
           </div>
         </div>
       </div>`;
