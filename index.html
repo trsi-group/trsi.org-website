@@ -1,39 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include "head.liquid" %}
-<body data-page="home">
-  <div id="header"></div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tristar & Red Sector is a demo group, a.k.a The Sleeping Gods.">
+    <link rel="stylesheet" href="src/main.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="src/styles.css">
+    <script src="src/main.js" type="module" defer></script>
+    <title>Tristar & Red Sector Inc. Website</title>
+  </head>
+  <body data-page="home">
+    <div id="header"></div>
 
-  <!-- Top section -->
-  <section id="top-section" class="top-section container-fluid py-5">
-    <div class="container">
-      <div class="row mb-5 align-items-center">
-        <img src="trsi-logo.svg" height="100" alt="">
+    <!-- Top section -->
+    <section id="top-section" class="top-section container-fluid py-5">
+      <div class="container">
+        <div class="row mb-5 align-items-center">
+          <img src="trsi-logo.svg" height="100" alt="">
+        </div>
+        <div class="row mb-5">
+          <div class="col-md-6 c64-purple">Founded in 1990, TRSI is one of the most iconic and longest-standing groups in the global demoscene. Known for pushing the boundaries of creativity and technology, TRSI has been at the forefront of crafting mesmerizing demos, intros, and music for platforms ranging from the Amiga and Commodore 64 to modern PCs.</div>
+          <div class="col-md-6 c64-purple">As pioneers of digital art and innovation, TRSI thrives on the intersection of code, design, and sound, continuously inspiring the scene with groundbreaking productions. Join us in celebrating over three decades of passion, creativity, and camaraderie in the demoscene community!</div>
+        </div>
       </div>
-      <div class="row mb-5">
-        <div class="col-md-6 c64-purple">Founded in 1990, TRSI is one of the most iconic and longest-standing groups in the global demoscene. Known for pushing the boundaries of creativity and technology, TRSI has been at the forefront of crafting mesmerizing demos, intros, and music for platforms ranging from the Amiga and Commodore 64 to modern PCs.</div>
-        <div class="col-md-6 c64-purple">As pioneers of digital art and innovation, TRSI thrives on the intersection of code, design, and sound, continuously inspiring the scene with groundbreaking productions. Join us in celebrating over three decades of passion, creativity, and camaraderie in the demoscene community!</div>
+    </section>
+
+    <!-- Latest productions section -->
+    <section id="card-tiles-section" class="container-lg py-5">
+      <h1>Latest Productions</h1>
+      <!-- Container for DOM decoration -->
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="latest-productions-container">
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Latest productions section -->
-  <section id="card-tiles-section" class="container-lg py-5">
-    <h1>Latest Productions</h1>
-    <!-- Container for DOM decoration -->
-    <div class="row row-cols-1 row-cols-md-3 g-4" id="latest-productions-container">
-    </div>
-  </section>
+    <!-- Featured productions section -->
+    <section id="card-tiles-section" class="container-lg py-5">
+      <h1>Featured Demos</h1>
+      <!-- Container for DOM decoration -->
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="featured-productions-container"></div>
+    </section>
 
-  <!-- Featured productions section -->
-  <section id="card-tiles-section" class="container-lg py-5">
-    <h1>Featured Demos</h1>
-    <!-- Container for DOM decoration -->
-    <div class="row row-cols-1 row-cols-md-3 g-4" id="featured-productions-container"></div>
-  </section>
-
-  <!-- Footer section -->
-  <div id="footer"></div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
-</body>
+    <!-- Footer section -->
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+  </body>
 </html>
